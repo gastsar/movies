@@ -1,0 +1,42 @@
+@import "variables";
+.movieSearch {
+  position: relative;
+  ul {
+    position: absolute;
+    z-index: 1000;
+    top: 40;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: black;
+    background: #ffffff;
+    max-height: 50vh;
+    overflow-y: auto;
+    li {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      transition: background 200ms;
+      background: rgb(241 241 241);
+      height: 4rem;
+      border-radius: 10px;
+      &:hover {
+        background: rgba(241, 241, 241, 0.1);
+      }
+      a {
+        font-size: 1rem;
+        @include flex-center(flex-start);
+        flex-direction: row;
+        gap: 0.5rem;
+        white-space: nowrap; /* Empêche le texte de se répartir sur plusieurs lignes */
+        overflow: hidden; /* Cache le texte qui dépasse la zone définie */
+        text-overflow: ellipsis; /* Ajoute les "..." à la fin si le texte dépasse */
+        img {
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

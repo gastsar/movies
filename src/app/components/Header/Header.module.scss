@@ -1,0 +1,32 @@
+@import "variables";
+.header {
+  @include flex-center(space-between);
+  height: 50px;
+  background-color: $primary-color;
+  color: #fff;
+  font-size: 20px;
+  padding: 0 2rem;
+}
+.navigation {
+  ul {
+    @include flex-center();
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    list-style: none;
+    gap: 2rem;
+  }
+}
+.search {
+  @include flex-center();
+
+  gap: 1rem;
+
+  input {
+    height: 30px;
+    width: 250px;
+    border: 1px solid $border-dark;
+    border-radius: 5px;
+    padding: 0 5px;
+  }
+}

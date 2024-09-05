@@ -1,0 +1,10 @@
+$primary-color: #008d00;
+$border-dark: rgba($primary-color, 0.88);
+
+@mixin flex-center($justify: center, $align: center , $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction:$direction;
+  
+}

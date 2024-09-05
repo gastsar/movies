@@ -1,7 +1,6 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { montserrat, roboto } from "@/font";
+import Header from "./components/Header/Header";
+import "./globals.scss";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +9,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="fr">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+      </head>
+      <body className={`${roboto.className}, ${montserrat.className}`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
