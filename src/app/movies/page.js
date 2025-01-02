@@ -1,13 +1,13 @@
-import MediaCard from "../components/MediaCard/MediaCard";
+import SearchResult from "./(search)/SearchResults";
 
-const MoviesPage = () => {
+const MoviesPage = ({ searchParams }) => {
   return (
-    <>
+    <main>
       <div>MoviesPage</div>
       <div>
-        <MediaCard movieId={10} />
+        <SearchResult searchParams={searchParams} />
       </div>
-    </>
+    </main>
   );
 };
 

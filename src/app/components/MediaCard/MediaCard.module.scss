@@ -1,35 +1,67 @@
 @import "variables";
+
 .card {
-  background-color: rgba(203, 250, 199, 0.692);
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
+  min-width: 180px;
+  height: 250px;
+  position: relative;
+  border-radius: $radius-border;
+  display: block;
   .image {
     position: relative;
-    margin: 2px;
+    width: 100%;
+    height: 100%;
     img {
+      aspect-ratio: 1/1;
       object-fit: cover;
-      border-radius: 0.5rem 0.5rem 0 0;
+      border-radius: $radius-border;
       width: 100%; /* Ou une autre valeur spécifique */
       height: auto; /* Assure que la hauteur est ajustée automatiquement */
     }
   }
   .content {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
     padding: 1.5rem 1rem;
-    position: relative;
+    position: absolute;
+    z-index: 20;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    border-radius: $radius-border;
+    @include flex-center(center);
+    flex-direction: column;
+    background-color: #102b278a;
+    bottom: 0;
+    gap: 0.5rem;
+
     h2 {
-      font-size: 1.3rem;
+      font-size: 1rem;
+      text-align: center;
+      color: #46dac1;
     }
     span {
-      position: absolute;
-      top: -30px;
-      left: 10px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: rgb(203, 250, 199);
-      border: 0.2rem solid rgba(0, 128, 0, 0.781);
-      @include flex-center(space-between);
+      color: #46dac1;
     }
+  }
+  .vote {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 25px;
+    border-radius: 1rem 0 1.5rem 0;
+    z-index: 50;
+    font-weight: 600;
+    background-color: $secondary-text;
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover .content {
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+  }
+  &:hover .vote {
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(255, 255, 255);
   }
 }

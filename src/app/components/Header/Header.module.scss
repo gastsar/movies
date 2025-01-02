@@ -1,32 +1,56 @@
 @import "variables";
 .header {
   @include flex-center(space-between);
-  height: 50px;
-  background-color: $primary-color;
+  flex-direction: column;
+  width: 13%;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  background-color: $bg-primary;
   color: #fff;
-  font-size: 20px;
-  padding: 0 2rem;
+  padding: 1rem 0;
+  border-radius: 0 1rem 1rem 0;
 }
-.navigation {
-  ul {
-    @include flex-center();
-    height: 50px;
-    color: #fff;
-    font-size: 20px;
-    list-style: none;
-    gap: 2rem;
-  }
-}
-.search {
+
+.logoNav,
+.logoNav ul {
   @include flex-center();
+  flex-direction: column;
+  width: 100%;
+}
+.logoNav {
+  gap: 2rem;
+}
+.nav {
+  width: 100%;
 
-  gap: 1rem;
-
-  input {
-    height: 30px;
-    width: 250px;
-    border: 1px solid $border-dark;
-    border-radius: 5px;
-    padding: 0 5px;
+  ul {
+    li {
+      width: 100%;
+      color: #929090c4;
+      a {
+        padding: 1rem 1.5rem;
+        width: 100%;
+        gap: 0.5rem;
+        @include flex-center(flex-start);
+      }
+    }
+    li:hover,
+    .active {
+      background: #102b278a;
+      color: rgb(70, 218, 193);
+      position: relative;
+      ::after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 5px;
+        height: 3.5rem;
+        background: rgb(70, 218, 193);
+        color: rgb(70, 218, 193);
+      }
+    }
   }
 }

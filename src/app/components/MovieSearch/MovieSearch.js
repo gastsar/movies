@@ -7,7 +7,7 @@ import MovieSearchResults from "./MovieSearchResults/MovieSearchResults";
 const MovieSearch = () => {
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
-  const updateMovieSearches = async (query) => {
+  const updateMovieSearch = async (query) => {
     const response = await fetch(`/api/movies/search?query=${query}`);
     const { results } = await response.json();
     setMovieResults(results);
@@ -18,15 +18,18 @@ const MovieSearch = () => {
       <DebounceInput
         type="search"
         minLength={3}
-        debounceTimeout={300}
+        debounceTimeout={200}
         onChange={(e) => updateMovieSearch(e.target.value)}
         placeholder="Rechercher un titre ..."
-        onBlurCapture={() => setHasFocus(false)}
-        onFocus={() => setHasFocus(true)}
+        /*   onBlurCapture={() => setHasFocus(false)}
+        onFocus={() => setHasFocus(true)} */
       />
-      {movieResults.length > 0 && hasFocus && (
-        <MovieSearchResults movieResults={movieResults} />
-      )}
+
+      <div className={styles.movieSearchResults}>
+        {movieResults.length > 0 && (
+          <MovieSearchResults movieResults={movieResults} />
+        )}
+      </div>
     </div>
   );
 };

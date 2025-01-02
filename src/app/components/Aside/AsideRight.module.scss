@@ -1,0 +1,10 @@
+@import "variables";
+.asideRight {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15rem;
+  background-color: $bg-secondary;
+  color: $color-white;
+}
