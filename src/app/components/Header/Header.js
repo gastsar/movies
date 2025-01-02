@@ -1,27 +1,53 @@
+"use client";
 import Link from "next/link";
-import MovieSearch from "../MovieSearch/MovieSearch";
+import { usePathname } from "next/navigation";
+import { BiMoviePlay } from "react-icons/bi";
+import { BsCollectionPlay } from "react-icons/bs";
+import { GoHeart, GoHome } from "react-icons/go";
 import styles from "./Header.module.scss";
 const Header = () => {
+  const pathname = usePathname();
   return (
     <header className={styles.header}>
-      <div>
+      <div className={styles.logoNav}>
         <Link href="/">MyMovie</Link>
-      </div>
-      <div className={styles.navigation}>
-        <nav>
+        <nav className={styles.nav}>
           <ul>
-            <li>
-              <Link href="/series">Séries</Link>
+            <li key="home" className={pathname === "/" ? styles.active : ""}>
+              <Link href="/">
+                <GoHome />
+                Acceuil
+              </Link>
             </li>
-            <li>
-              <Link href="/movies">Films</Link>
+            <li
+              key="series"
+              className={pathname === "/series" ? styles.active : ""}
+            >
+              <Link href="/series">
+                <BiMoviePlay />
+                Séries TV
+              </Link>
+            </li>
+            <li
+              key="movie"
+              className={pathname === "/movie" ? styles.active : ""}
+            >
+              <Link href="/movie">
+                <BsCollectionPlay />
+                Films
+              </Link>
+            </li>
+            <li
+              key="favorites"
+              className={pathname === "/favorites" ? styles.active : ""}
+            >
+              <Link href="/favorites">
+                <GoHeart />
+                Favoris
+              </Link>
             </li>
           </ul>
         </nav>
-      </div>
-      <div className={styles.search}>
-        <MovieSearch />
-        <span className="material-symbols-outlined">person</span>
       </div>
     </header>
   );

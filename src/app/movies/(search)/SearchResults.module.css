@@ -1,0 +1,6 @@
+.container__result {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+}/*# sourceMappingURL=SearchResults.module.css.map */

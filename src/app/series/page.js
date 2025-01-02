@@ -1,7 +1,7 @@
 import React from "react";
 
 const SeriesPage = () => {
-  return <div>SeriesPage</div>;
+  return <main>SeriesPage</main>;
 };
 
 export default SeriesPage;

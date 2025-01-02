@@ -1,10 +1,11 @@
+import AsideRight from "./components/Aside/AsideRight";
 import Popular from "./components/Popular/Popular";
-import styles from "./page.module.scss";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main>
       <Popular />
+      <AsideRight />
     </main>
   );
 }

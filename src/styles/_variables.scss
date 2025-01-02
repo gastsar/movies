@@ -1,10 +1,20 @@
-$primary-color: #008d00;
+$color-white: #ffffff;
+$color-black: #000000;
+$primary-text: rgb(70, 218, 193);
+$bg-green: rgba(0, 128, 107, 0.349);
+$secondary-text: rgba(255, 255, 255, 0.6);
+$primary-color: rgba(146, 144, 144, 0.768627451);
 $border-dark: rgba($primary-color, 0.88);
 
-@mixin flex-center($justify: center, $align: center , $direction: row) {
+$bg-primary: #212121;
+$bg-secondary: #171717;
+$radius-border: 1rem;
+@mixin flex-center($justify: center, $align: center, $direction: row) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
-  flex-direction:$direction;
-  
+  flex-direction: $direction;
+}
+
+@media screen and (max-width: 834px) {
 }
